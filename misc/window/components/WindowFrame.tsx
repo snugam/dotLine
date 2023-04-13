@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Titlebar from './Titlebar';
-import logo from '@assets/images/logo.png';
+import logo from '@assets/images/logo.gif';
 
 type Props = {
     title?: string;

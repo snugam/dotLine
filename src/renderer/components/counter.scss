@@ -1,0 +1,31 @@
+.counter {
+    div,
+    label {
+        display: inline-block;
+    }
+
+
+    #display-count {
+        text-align: center;
+        background-color: #66ff66ff;
+        padding: 5px;
+        width: 35px;
+        color: black;
+        font-weight: bold;
+    }
+    
+    button {
+        width: 35px;
+        height: 35px;
+        color: white;
+        font-size: large;
+        margin-top: 8px;
+
+        &:hover {
+            background-color: #66ff66ff;
+            color: #ff6699;
+            font-weight: bolder;
+        }
+    }
+    float: right;
+}

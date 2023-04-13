@@ -109,3 +109,4 @@ dist
 
 #webpack build
 .webpack/
+assets/images/logo.gif
