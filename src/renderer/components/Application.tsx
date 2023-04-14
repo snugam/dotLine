@@ -2,9 +2,9 @@ import React from 'react';
 import './Application.scss';
 import Counter from './counter';
 import SetTheme from './setTheme';
+import Tabs from './tabs/main';
 
 const Application: React.FC = () => {
-
 
   return (
     <div id='dotLiner'>
@@ -12,7 +12,7 @@ const Application: React.FC = () => {
         <Counter />
       </div>
       <div className='main-body'>
-        <div><p>BODY STUFF</p></div>
+        <Tabs />
       </div>
       <div className='footer'>
         <SetTheme />
