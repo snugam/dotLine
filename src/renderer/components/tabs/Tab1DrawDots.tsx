@@ -33,8 +33,12 @@ enum Color {
 }
 
 class selectShadeFrom {
-  selectShade(selColor: keyof typeof Color) {
-    switch (selColor) {
+  selectShade() {
+
+    const values = Object.values(Color);
+    const randomIndex = Math.floor(Math.random() * values.length);
+
+    switch (values[randomIndex]) {
       case 'Cyan':
         return this.getRandomCyanShade();
       case 'Green':
@@ -42,28 +46,28 @@ class selectShadeFrom {
       case 'Magenta':
         return this.getRandomMagentaShade();
       case 'Yellow':
-        return this.getRandomCyanShade
+        return this.getRandomCyanShade();
     }
   }
-  getRandomGreenShade(): string {
+  private getRandomGreenShade(): string {
     const hue = Math.floor(Math.random() * 41) + 100; // Random hue value between 100 and 140
     const saturation = Math.floor(Math.random() * 51) + 50; // Random saturation value between 50 and 100
     const lightness = Math.floor(Math.random() * 21) + 40; // Random lightness value between 40 and 60
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   }
-  getRandomCyanShade(): string {
+  private getRandomCyanShade(): string {
     const hue = Math.floor(Math.random() * 41) + 160; // Random hue value between 160 and 200
     const saturation = Math.floor(Math.random() * 51) + 50; // Random saturation value between 50 and 100
     const lightness = Math.floor(Math.random() * 21) + 40; // Random lightness value between 40 and 60
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   }
-  getRandomBlueShade(): string {
+  private getRandomBlueShade(): string {
     const hue = Math.floor(Math.random() * 41) + 220; // Random hue value between 220 and 260
     const saturation = Math.floor(Math.random() * 51) + 50; // Random saturation value between 50 and 100
     const lightness = Math.floor(Math.random() * 21) + 40; // Random lightness value between 40 and 60
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   }
-  getRandomMagentaShade(): string {
+  private getRandomMagentaShade(): string {
     const hue = Math.floor(Math.random() * 41) + 280; // Random hue value between 280 and 320
     const saturation = Math.floor(Math.random() * 51) + 50; // Random saturation value between 50 and 100
     const lightness = Math.floor(Math.random() * 21) + 40; // Random lightness value between 40 and 60
@@ -76,9 +80,6 @@ const MyCanvas = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCan
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // const [color, selectColour] = useState<>('Green');
-
-
   useEffect(() => {
 
     const canvas = canvasRef.current!;
@@ -89,8 +90,11 @@ const MyCanvas = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCan
       canvasCtx.beginPath();
       canvasCtx.arc(35, 35, 10, 0, Math.PI * 2);
 
+      const sShade = new selectShadeFrom();
+
+
       setInterval(function () {
-        canvasCtx.fillStyle = getRandomGreenShade();
+        canvasCtx.fillStyle = sShade.selectShade() as string;
         canvasCtx.fill();
       }, 350);
 
