@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Application.scss';
-import Counter from './counter';
+import RateSelector from './tickRate';
 import SetTheme from './setTheme';
-import Tabs from './tabs/main';
+// import GreenyDots from './dots/drawDots';
+import GreenDots from './dots/drawDots';
+
 
 const Application: React.FC = () => {
+
+  const [tickrate, setTickRate] = useState<number>(650);
+
+  const incrementHandle = () => {
+    setTickRate(tickrate + 100);
+  };
+  const decrementHandle = () => {
+    setTickRate(tickrate - 100);
+  }
 
   return (
     <div id='dotLiner'>
       <div className='header'>
-        <Counter />
+        <RateSelector currentrate={tickrate} increment={incrementHandle} decrement={decrementHandle} />
       </div>
       <div className='main-body'>
-        <Tabs />
+        {/* <GreenyDots currentRate={tickrate} /> */}
+        <GreenDots currentrate={tickrate} />
       </div>
       <div className='footer'>
         <SetTheme />

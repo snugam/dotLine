@@ -14,6 +14,7 @@ let appWindow: BrowserWindow;
  */
 
 export function createAppWindow(): BrowserWindow {
+
   // Create new window instance
   appWindow = new BrowserWindow({
     width: 800,
@@ -36,6 +37,7 @@ export function createAppWindow(): BrowserWindow {
 
   // Load the index.html of the app window.
   appWindow.loadURL(APP_WINDOW_WEBPACK_ENTRY);
+
 
   // Show window when its ready to
   appWindow.on('ready-to-show', () => appWindow.show());
