@@ -64,6 +64,10 @@
     bottom: 0;
     text-align: center;
   }
+  input {
+    color: white;
+    background-color: black;
+  }
 }
 
 body:not(.dark-mode) {
@@ -105,5 +109,10 @@ body:not(.dark-mode) {
 
   label {
     color: #282828;
+  }
+
+  input {
+    color: black;
+    background-color: white;
   }
 }

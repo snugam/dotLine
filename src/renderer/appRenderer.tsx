@@ -4,6 +4,7 @@ import WindowFrame from '@misc/window/components/WindowFrame';
 import Application from '@components/Application';
 
 
+
 const app = (
     <WindowFrame title='LinerDOT' platform='windows'>
         <Application />

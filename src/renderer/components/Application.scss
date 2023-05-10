@@ -352,3 +352,19 @@ button {
     }
   }
 }
+
+#dotLiner {
+  #panel-left,
+  #panel-right {
+    vertical-align: top;
+    display: inline-block;
+  }
+  #panel-left {
+    width: 74%;
+  }
+  #panel-right {
+    width: 25%;
+    border-left: 2px solid #8b0a97f5;
+    height: 1040px;
+  }
+}
