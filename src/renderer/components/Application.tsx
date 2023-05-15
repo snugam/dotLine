@@ -9,6 +9,7 @@ const Application: React.FC = () => {
   const [tickrate, setTickRate] = useState<number>(650);
   const [canvasWidth, setCanvasWidth] = useState<number>(500);
   const [canvasHeight, setCanvasHeight] = useState<number>(500);
+  const [shapeSelected, setShapeSelected] = useState<ISelectHandlerOption>({ label: 'Square', value: 'square' });
 
   const flashFaster = () => { setTickRate(tickrate + 100) }
   const flashSlower = () => { setTickRate(tickrate - 100) }
@@ -45,6 +46,25 @@ const Application: React.FC = () => {
           increment: canvasWidthPlus,
           decrement: canvasWidthMinus,
         }
+      },
+      shapeSelect: {
+        propname: `shapetype`,
+        fieldname: 'Select a Shape Type',
+        options: [{ label: 'Square', value: 'square' }, { label: 'Circle', value: 'circle' }],
+        value: shapeSelected,
+        onchange: function (ev) {
+          switch (ev.target.value) {
+            case 'square':
+              setShapeSelected({ label: 'Square', value: 'square' });
+              break;
+            case 'circle':
+              setShapeSelected({ label: 'Circle', value: 'circle' });
+              break;
+            default:
+              alert('hit default');
+              break;
+          }
+        }
       }
     }
   };
@@ -53,7 +73,7 @@ const Application: React.FC = () => {
     <div id='dotLiner'>
       <div id="panel-left">
         <div className='header'>
-
+          {/* <Blocks /> */}
         </div>
         <div className='main-body'>
           {/* <GreenyDots currentRate={tickrate} /> */}
@@ -66,7 +86,6 @@ const Application: React.FC = () => {
       <div id="panel-right">
         <Settings appconfig={mySettings.appconfig} />
       </div>
-
     </div>
   );
 };

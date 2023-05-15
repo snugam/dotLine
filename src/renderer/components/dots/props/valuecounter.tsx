@@ -1,7 +1,7 @@
 import React from 'react';
-import './handleprops.scss'
+import './valuecounter.scss'
 
-const PropHandler: React.FC<IPropHandler<number>> = ({ propname, fieldname, value, increment, decrement }) => {
+const ValueCounter: React.FC<ICounterHandler<number>> = ({ propname, fieldname, value, increment, decrement }) => {
 
     return (
         <div className="propselector" id={propname}>
@@ -19,4 +19,4 @@ const PropHandler: React.FC<IPropHandler<number>> = ({ propname, fieldname, valu
     );
 };
 
-export default PropHandler;
+export default ValueCounter;

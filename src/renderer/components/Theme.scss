@@ -106,9 +106,10 @@ body:not(.dark-mode) {
   --titlebar-popup-item-hover-bgcolor: #e6e6e6;
 
   --erwt-heading-color: #282828;
-
-  label {
-    color: #282828;
+  label,
+  .text {
+    color: black;
+    margin-right: 15px;
   }
 
   input {

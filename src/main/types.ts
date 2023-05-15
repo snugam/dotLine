@@ -1,5 +1,4 @@
-
-
+// import type { ActionMeta } from 'react-select';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface IDotConfig {
@@ -7,23 +6,33 @@ interface IDotConfig {
     increment: (eventMouse: React.MouseEvent<HTMLButtonElement>) => void;
     decrement: (eventMouse: React.MouseEvent<HTMLButtonElement>) => void;
 }
-interface IPropHandler<T> {
+interface IFieldProp {
     fieldname: string,
     propname: string,
+}
+interface ICounterHandler<T> extends IFieldProp {
     value: T,
     increment: (eventMouse: React.MouseEvent<HTMLButtonElement>) => void;
     decrement: (eventMouse: React.MouseEvent<HTMLButtonElement>) => void;
 }
-
+interface ISelectHandlerOption {
+    label: string,
+    value: string
+}
+interface ISelectHandler extends IFieldProp {
+    options: Array<ISelectHandlerOption>;
+    value: ISelectHandlerOption;
+    onchange: (ev: React.ChangeEvent<HTMLSelectElement>) => void
+}
 interface ICanvasConfig extends JSX.IntrinsicAttributes, React.ClassAttributes<HTMLCanvasElement>, React.CanvasHTMLAttributes<HTMLCanvasElement> {
-    canvasWidthConfig: IPropHandler<number>,
-    canvasHeightConfig: IPropHandler<number>
+    canvasWidthConfig: ICounterHandler<number>,
+    canvasHeightConfig: ICounterHandler<number>
 }
 interface IGFHYConfig {
-    dotConfig?: IPropHandler<number>,
+    dotConfig?: ICounterHandler<number>,
     canvasConfig?: ICanvasConfig,
+    shapeSelect?: ISelectHandler,
 }
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface IAppConfig {
     appconfig: IGFHYConfig
