@@ -109,7 +109,7 @@ dist
 
 #webpack build
 .webpack/
-assets/images/logo.gif
+#assets/images/logo.gif
 
 #spgo
 SPGo.json
