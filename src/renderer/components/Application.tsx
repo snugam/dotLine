@@ -3,6 +3,7 @@ import './Application.scss';
 import SetTheme from './setTheme';
 import Settings from './dots/settings';
 import GreenDots from './dots/dotsdraw';
+import NeuralActivate from './neural';
 
 const Application: React.FC = () => {
 
@@ -76,7 +77,7 @@ const Application: React.FC = () => {
           {/* <Blocks /> */}
         </div>
         <div className='main-body'>
-          {/* <GreenyDots currentRate={tickrate} /> */}
+          <NeuralActivate />
           <GreenDots appconfig={mySettings.appconfig} />
         </div>
         <div className='footer'>
