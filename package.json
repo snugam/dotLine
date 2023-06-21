@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development electron-forge start",
+    "startVMLx": "export ELECTRON_EXTRA_LAUNCH_ARGS=--disable-gpu && cross-env NODE_ENV=development electron-forge start",
     "startDev": "cross-env NODE_ENV=development electron-forge-vscode-win start --remote-debugging-port=9223",
     "lint": "eslint src/ --ext .ts,.js,.tsx,.jsx"
   },
