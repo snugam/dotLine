@@ -105,6 +105,9 @@
   },
   "include": [
     "src/**/*",
-    "tools/**/*"
+    "tools/**/*",
+    "assets/**/*",
+    "misc/**/*",
+    "typings/**/*"
   ]
 }
