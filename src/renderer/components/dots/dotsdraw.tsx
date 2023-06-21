@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
-import './drawdots.scss';
+import './drawDots.scss';
+
 enum Color {
   Cyan = "Cyan",
   Magenta = "Magenta",
